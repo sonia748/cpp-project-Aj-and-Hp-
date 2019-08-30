@@ -3,7 +3,9 @@
 
 #include <iostream>
 
-
+//function to calculate salary with 7.6% increment
+// params previous salary from user
+// returns void.. prints on screen
 void ch2Q2(double prev_sal) {
 	double rev_salary = 0.0;
 	rev_salary = prev_sal + (prev_sal * (7.6 / 100));
