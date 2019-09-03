@@ -2,6 +2,52 @@
 //
 
 #include <iostream>
+using namespace std;
+
+void calc_figures(double interest, double bal)
+{
+    double total_due;
+    double min_pay;
+        total_due = bal+interest;
+        std::cout<<"\nYour total interest is :"<<interest;
+        std::cout<<"\nYour Total Amount due is :"<<total_due;
+
+       double ten_per = (total_due *10)/100;
+
+            if(total_due<=10){
+                min_pay=total_due;
+            }
+            else
+              {
+                  if(ten_per<10)
+                       min_pay=10;
+
+                 else
+                      min_pay = ten_per;
+              }
+              std::cout<<"\nMinimum amount due is :"<<min_pay<<"\n";
+}
+
+//function to calculate salary with 7.6% increment for user suggested months
+// params previous salary from user, no of months for increment
+// returns void.. prints on screen
+void ch3q2(double bal)
+{
+    double interest;
+
+    if(bal<=1000)
+    {
+        interest=bal*(1.5/100);
+        calc_figures(interest, bal);
+    }
+
+    else
+    {
+         interest=bal*(1/100);
+        calc_figures(interest,bal);
+    }
+}
+
 
 //function to calculate salary with 7.6% increment for user suggested months
 // params previous salary from user, no of months for increment
@@ -40,9 +86,9 @@ int main()
 	std::cin >> sal;
 	ch2Q2(sal);
 	*/
-	
 
-	/*Ch2 Q3 starts from here*/
+
+	/*Ch2 Q3 starts from here
 	double sal;
 	int nom; // variable for storing number of months of increment
 	std::cout << "Enter your monthly salary:";
@@ -50,6 +96,28 @@ int main()
 	std::cout << "Enter for how many months do you want the increment for ??";
 	std::cin >> nom;
 	ch2Q3(sal, nom);
+	*/
+
+	/*Ch3 Q2 starts from here */
+	double bal;
+    string user_input="Y";
+    while((user_input=="Y")||(user_input=="y"))
+    {
+        std::cout<<"Do you continue ? (Y/N) ";
+        std::cin>>user_input;
+
+        if((user_input=="y") || (user_input=="Y"))
+        {
+        std::cout << "What is Account Balance ? ";
+        std::cin>>bal;
+        ch3q2(bal);
+        }
+        else
+        {
+            break;
+        }
+    }
+
 
 
 }
@@ -57,7 +125,7 @@ int main()
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
+// Tips for Getting Started:
 //   1. Use the Solution Explorer window to add/manage files
 //   2. Use the Team Explorer window to connect to source control
 //   3. Use the Output window to see build output and other messages
