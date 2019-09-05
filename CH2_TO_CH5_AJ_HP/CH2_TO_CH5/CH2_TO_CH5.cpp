@@ -4,6 +4,31 @@
 #include <iostream>
 using namespace std;
 
+double Ch4Q2calculatehat(int height, double weight)
+{
+ double hatsize = 2.9 * (weight / height);
+ return hatsize;
+}
+
+double Ch4Q2calculatejacket(int height, double weight, int age)
+{
+  double jacketsize = (height * weight)/288;
+  if((age%10 ==0) && (age>=30))
+     jacketsize = jacketsize + 0.125;
+
+  return jacketsize;
+}
+
+double Ch4Q2calculatewaist(double weight, int age)
+{
+  double waistsize = weight/5.7;
+
+  if((age%2 == 0) && (age>=28))
+      waistsize=waistsize + 0.1;
+
+  return waistsize;
+}
+
 void ch3q3(int month, int day)
 {
 	int endDate = 19;
@@ -271,7 +296,7 @@ int main()
 	ch2Q3(sal, nom);
 	*/
 
-	/*Ch3 Q2 starts from here 
+	/*Ch3 Q2 starts from here
 	double bal;
     string user_input="Y";
     while((user_input=="Y")||(user_input=="y"))
@@ -292,7 +317,7 @@ int main()
     } */
 
 
-	/*Ch3 Q3 starts here*/
+	/*Ch3 Q3 starts here
 	int month, day;
 	char answer, space;
 	do
@@ -308,6 +333,42 @@ int main()
 	std::cout << " Good Bye! See you next time.\n";
 	exit;
 	return 0;
+*/
 
+/* Ch4 Q2 starts here */
+
+int height;
+double weight, hsize, jsize, wsize;
+int age;
+string answer;
+
+std::cout<<"Do you want to continue (Y/N)? ";
+std::cin>>answer;
+
+  while((answer=="y") || (answer=="Y"))
+  {
+
+
+     std::cout<<"\nEnter your height in inches:";
+     std::cin>>height;
+
+     std::cout<<"\nEnter your Weight in pounds:";
+     std::cin>>weight;
+
+     std::cout<<"\nEnter your age:";
+     std::cin>>age;
+
+     hsize = Ch4Q2calculatehat(height,weight);
+     std::cout<<"\nYour ideal hat should be of size :"<<hsize<<" inches";
+
+     jsize= Ch4Q2calculatejacket(height, weight, age);
+     std::cout<<"\nYour ideal jacket size (chest in inches) should be :"<<jsize;
+
+    wsize = Ch4Q2calculatewaist(weight,age);
+    std::cout<<"\nYour ideal waist size for trousers would be: "<<wsize;
+
+    std::cout<<"\nDo you want to continue (Y/N)? ";
+    std::cin>>answer;
+  }
 
 }
