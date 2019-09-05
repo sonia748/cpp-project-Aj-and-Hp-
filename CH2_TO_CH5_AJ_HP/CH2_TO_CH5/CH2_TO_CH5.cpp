@@ -4,6 +4,179 @@
 #include <iostream>
 using namespace std;
 
+void ch3q3(int month, int day)
+{
+	int endDate = 19;
+	if ((month == 3 && day >= 21) || (month == 4 && day <= 19))
+	{
+
+		std::cout << "You are an Aries!\n";
+		std::cout << "Aries(March 21 - April 19)\n";
+
+		if (month == 4)
+		{
+			if ((day == endDate) || (day == endDate + 2))
+				std::cout << "you are cusp with Taurus\n";
+		}
+	}
+	else if
+		((month == 4 && day >= 20) || (month == 5 && day <= 20))
+	{
+
+		std::cout << "You are an Taurus!\n";
+		std::cout << "Taurus(April 20 - May 20)\n";
+
+		if (month == 5)
+		{
+			if ((day == endDate + 1) || (day == endDate + 2) || (day == endDate + 3))
+				std::cout << "you are cusp with Gemini\n";
+		}
+
+	}
+	if ((month == 5 && day >= 21) || (month == 6 && day <= 21))
+	{
+		std::cout << "You are an Gemini!\n";
+		std::cout << "Gemini(May 21 - June 21)\n";
+
+		if (month == 6)
+		{
+
+			if ((day == endDate + 1) || (day == endDate + 2) || (day == endDate + 3) || (day == endDate + 4))
+				std::cout << "you are cusp with Cancer\n";
+		}
+	}
+	else if
+		((month == 6 && day >= 22) || (month == 7 && day <= 22))
+	{
+
+		std::cout << "You are an Cancer!\n";
+		std::cout << "Cancer(June 22 - July 22)\n";
+
+		if (month == 7)
+		{
+
+			if ((day == endDate + 2) || (day == endDate + 3) || (day == endDate + 4))
+				std::cout << "you are cusp with Leo\n";
+		}
+	}
+
+	if ((month == 7 && day >= 23) || (month == 8 && day <= 22))
+	{
+		std::cout << "You are an Leo!\n";
+		std::cout << "Leo(July 23 - August 22)\n";
+
+		if (month == 8)
+		{
+
+			if ((day == endDate + 2) || (day == endDate + 3) || (day == endDate + 4))
+				std::cout << "you are cusp with Virgo\n";
+		}
+
+	}
+	else if ((month == 8 && day >= 23) || (month == 9 && day <= 22))
+	{
+
+		std::cout << "You are an Virgo!\n";
+		std::cout << "Virgo(August 23 - September 22)\n";
+
+		if (month == 9)
+
+		{
+
+			if ((day == endDate + 2) || (day == endDate + 3) || (day == endDate + 4))
+				std::cout << "you are cusp with Libra\n";
+
+		}
+	}
+
+	else if ((month == 9 && day >= 23) || (month == 10 && day <= 22))
+	{
+		std::cout << "You are an Libra!\n";
+		std::cout << "Libra(September 23 - October 22)\n";
+
+		if (month == 10)
+
+		{
+
+			if ((day == endDate + 2) || (day == endDate + 3) || (day == endDate + 4))
+				std::cout << "you are cusp with Scorpio\n";
+
+		}
+	}
+	else if ((month == 10 && day >= 23) || (month == 11 && day <= 21))
+	{
+
+		std::cout << "You are an Scorpio!\n";
+		std::cout << "Scorpio(October 23 - November 21)\n";
+
+		if (month == 11)
+
+		{
+
+			if ((day == endDate + 1) || (day == endDate + 2) || (day == endDate + 3))
+				std::cout << "you are cusp with Sagittarius\n";
+
+		}
+
+	}
+	else if ((month == 11 && day >= 22) || (month == 12 && day <= 21))
+	{
+		std::cout << "You are an Sagittarius!\n";
+		std::cout << "Sagittarius(November 22 - December 21)\n";
+
+		if (month == 12)
+		{
+
+			if ((day == endDate + 1) || (day == endDate + 2) || (day == endDate + 3))
+				std::cout << "you are cusp with Cpricorn\n";
+
+		}
+	}
+	else if ((month == 12 && day >= 22) || (month == 1 && day <= 19))
+	{
+		std::cout << "You are an Capricorn!\n";
+		std::cout << "Capricorn(December 22 - January 19)\n";
+
+		if (month == 1)
+
+		{
+
+			if ((day == endDate - 1) || (day == endDate) || (day == endDate + 1) || (day == endDate + 2))
+
+				std::cout << "you are cusp with Aquarius\n";
+		}
+
+	}
+	else if ((month == 1 && day >= 20) || (month == 2 && day <= 18))
+	{
+		std::cout << "You are an Aquarius!\n";
+		std::cout << "Aquarius(January 20 - February 18)\n";
+
+		if (month == 2)
+
+		{
+
+			if ((day == endDate - 2) || (day == endDate - 1) || (day == endDate) || (day == endDate + 1))
+				std::cout << "you are cusp with pisces\n";
+		}
+	}
+	else if ((month == 2 && day >= 19) || (month == 3 && day <= 20))
+	{
+
+		std::cout << "You are an pisces!\n";
+		std::cout << "Pisces(February 19 - March 20)\n";
+
+		if (month == 3)
+
+		{
+
+			if ((day == endDate) || (day == endDate + 1) || (day == endDate + 2))
+				std::cout << "you are cusp with Aries\n";
+		}
+	}
+}
+
+
 void calc_figures(double interest, double bal)
 {
     double total_due;
@@ -98,7 +271,7 @@ int main()
 	ch2Q3(sal, nom);
 	*/
 
-	/*Ch3 Q2 starts from here */
+	/*Ch3 Q2 starts from here 
 	double bal;
     string user_input="Y";
     while((user_input=="Y")||(user_input=="y"))
@@ -116,19 +289,25 @@ int main()
         {
             break;
         }
-    }
+    } */
 
+
+	/*Ch3 Q3 starts here*/
+	int month, day;
+	char answer, space;
+	do
+	{
+		std::cout << "Enter your Birthdate in MM/DD Format \n";
+		std::cin >> month >> space >> day;
+		ch3q3(month, day);
+
+		std::cout << "Would you like to enter another birthdate??\n";
+		std::cin >> answer;
+	} while (answer == 'y' || answer == 'Y');
+
+	std::cout << " Good Bye! See you next time.\n";
+	exit;
+	return 0;
 
 
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started:
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
