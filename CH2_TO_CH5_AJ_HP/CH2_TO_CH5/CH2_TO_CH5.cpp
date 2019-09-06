@@ -4,12 +4,89 @@
 #include <iostream>
 using namespace std;
 
+
+//  Function which shows output
+// 24hour time  to 12 hour format
+void Ch5Q1showoutput(string time, int hh, string meridien)
+{
+  std::cout<<time<<" converted to 12 hour notation is:";
+    if (int(time[0])<12)  // for AM entered timings
+    {
+        cout<<time[0]-'0'<<":";  //printing hours
+        cout << time[3]<<time[4]; // printing minutes
+    }
+
+
+    else // for handling PM entered timings
+    {
+        if (hh == 0) {
+        cout << "12:"; // printing hours
+        cout << time[3]<<time[4]; // printing minutes
+    }
+
+    else {
+      cout<<hh<<":";
+      cout << time[3]<<time[4]; // printing minutes
+    }
+}
+    cout << " " << meridien << '\n'; //for printing AM & PM
+    return;
+}
+
+//  Function which does the conversion
+// 24hour time and covert it to
+// 12 hour format
+    void Ch5Q1convert24to12(string time)
+    {
+  	    //cout<<"\ninside convert fun and time is:"<<time;
+  	    int hh = int(time[0]-'0') * 10 + int(time[1]-'0');
+
+	// Finding out AM or PM
+	string meridien;
+	if (hh < 12)
+		meridien = "AM";
+
+	else
+		meridien = "PM";
+
+	hh = hh%12;
+
+    Ch5Q1showoutput(time,hh,meridien);
+
+  return;
+
+}  // end void function
+
+
+
+  void Ch5Q1takeinput()
+  {
+
+    string hours,minutes,time;
+
+    std::cout<<"\nEnter 2 digits for Hours  : ";
+    std::cin>>hours;
+
+    std::cout<<"\nEnter 2 digits for Minutes :";
+    std::cin>>minutes;
+
+    time=hours+":"+minutes;
+
+    Ch5Q1convert24to12(time);
+  }
+
+//function to calculate hat size
+//params height of person and weight of person
+// output hat size
 double Ch4Q2calculatehat(int height, double weight)
 {
  double hatsize = 2.9 * (weight / height);
  return hatsize;
 }
 
+//function to calculate jacket size
+//params height of person and weight of person and age of person
+// output jacket size
 double Ch4Q2calculatejacket(int height, double weight, int age)
 {
   double jacketsize = (height * weight)/288;
@@ -19,6 +96,9 @@ double Ch4Q2calculatejacket(int height, double weight, int age)
   return jacketsize;
 }
 
+//function to calculate waist size
+//params weight of person and age of person
+// output waist size for trouser
 double Ch4Q2calculatewaist(double weight, int age)
 {
   double waistsize = weight/5.7;
@@ -29,6 +109,9 @@ double Ch4Q2calculatewaist(double weight, int age)
   return waistsize;
 }
 
+//function to show horoscrope sign of person
+//params month and date of birthdate
+// output horoscope sign and cusp if available
 void ch3q3(int month, int day)
 {
 	int endDate = 19;
@@ -192,16 +275,16 @@ void ch3q3(int month, int day)
 		std::cout << "Pisces(February 19 - March 20)\n";
 
 		if (month == 3)
-
 		{
-
 			if ((day == endDate) || (day == endDate + 1) || (day == endDate + 2))
 				std::cout << "you are cusp with Aries\n";
 		}
 	}
 }
 
-
+//function to calculate total due and minimum pqymennt
+//params interest and balance of credit card
+// output total due and minimum payment
 void calc_figures(double interest, double bal)
 {
     double total_due;
@@ -335,8 +418,7 @@ int main()
 	return 0;
 */
 
-/* Ch4 Q2 starts here */
-
+/* Ch4 Q2 starts here
 int height;
 double weight, hsize, jsize, wsize;
 int age;
@@ -371,4 +453,19 @@ std::cin>>answer;
     std::cin>>answer;
   }
 
+
+*/
+
+/*ch5 Question 1 starts here */
+cout<<"\n Convert 24 hour to 12 hours \n";
+  string answer;
+  cout<<"\nDo you want to continue??";
+  cin>>answer;
+  while((answer=="y") || (answer=="Y"))
+  {
+    Ch5Q1takeinput();
+    cout<<"\nDo you want to continue??";
+    cin>>answer;
+  }
+    return 0;
 }
